@@ -1,0 +1,33 @@
+[System]
+Name='RULE111'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e1'
+Range=[-1 1]
+NumMFs=3
+MF1='NE':'trapmf',[-1.9 -1.1 -0.015 0]
+MF2='ZE':'trimf',[-0.015 0 0.015]
+MF3='PO':'trapmf',[0 0.015 0.2135 1.802]
+
+[Output1]
+Name='u1'
+Range=[-150 150]
+NumMFs=3
+MF1='NE':'trimf',[-150 -150 -150]
+MF2='ZE':'trimf',[0 0 0]
+MF3='PO':'trimf',[150 150 150]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1

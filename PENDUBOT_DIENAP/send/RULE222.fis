@@ -1,0 +1,33 @@
+[System]
+Name='RULE222'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e1'
+Range=[-1.5 1.5]
+NumMFs=3
+MF1='NE':'trapmf',[-2.85 -1.65 -1 -0.4]
+MF2='ZE':'trimf',[-1 -0.4 0.2]
+MF3='PO':'trapmf',[-0.4 0.2 1 2.703]
+
+[Output1]
+Name='u1'
+Range=[-150 150]
+NumMFs=3
+MF1='NE':'trimf',[-10 -10 -10]
+MF2='ZE':'trimf',[-4.1 -4.1 -4.1]
+MF3='PO':'trimf',[1.8 1.8 1.8]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
